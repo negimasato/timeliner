@@ -36,7 +36,7 @@ function LayerProp(name) {
 	*/
 }
 
-function Timeliner(target) {
+function Timeliner(element_id, target) {
 	// Dispatcher for coordination
 	var dispatcher = new Dispatcher();
 
@@ -621,7 +621,8 @@ function Timeliner(target) {
 
 	// Shadow Root
 	var root = document.createElement('timeliner');
-	document.body.appendChild(root);
+	var elem = document.getElementById(element_id);
+	elem.appendChild(root);
 	if (root.createShadowRoot) root = root.createShadowRoot();
 
 	window.r = root;
